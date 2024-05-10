@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Feature1Controller;
+use App\Http\Controllers\Feature2Controller;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,9 +18,23 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    // feature 1
+    Route::get('feature1', [Feature1Controller::class, 'index'])
+        ->name('feature1.index');
+    Route::post('feature1', [Feature1Controller::class, 'calculate'])
+        ->name('feature1.calculate');
+
+    // feature 2
+    Route::get('feature2', [Feature2Controller::class, 'index'])
+        ->name('feature2.index');
+    Route::post('feature2', [Feature2Controller::class, 'calculate'])
+        ->name('feature2.calculate');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
