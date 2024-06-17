@@ -33,7 +33,7 @@ export default function Index({ auth, packages, features, success, error })
                     </div>
                 }
 
-                <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg relative">
+                <div className="bg-white shadow-lg dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg relative">
                     <div className="flex flex-col gap-3 items-center p-4">
                         <img src="/img/coins.png" alt="coin" className="w-[100px]" />
 

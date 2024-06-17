@@ -26,7 +26,7 @@ export default function Feature({ feature, answer, children }) {
                     )}
 
                     <div className="bg-white dark:bg-gray-800 overflow-hidden
-                    shadow-sm sm:rounded-lg relative">
+                    shadow-sm sm:rounded-lg relative shadow-xl">
                         {availableCredits !== null && feature.required_credits > availableCredits && (
                             <div className="absolute left-0 top-0 right-0 bottom-0 z-20 flex flex-col items-center justify-center bg-white/70 gap-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

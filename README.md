@@ -1,18 +1,14 @@
-<p align="center">
-   <img src="" />
-</p>
-
 <h1 align="center">
-    <a">Saas</a>
+    <a>MachineSync</a>
 </h1>
 
 <p align="center">
-    Description
+   <img  src="https://github.com/Icegreeen/blog-graphQL/assets/56550632/167b7feb-df28-42a4-a7fc-c0f326860699" />
 </p>
 
 # 🖍 How to works
 
-Na backseasy you find a diverse collection of backgrounds ready to be used in your front-end interfaces. From smooth gradients to stunning images, our library offers a variety of options to bring your screens to life and provide elegant visual experiences.
+This SaaS project allows users to purchase and consume credits for various features. Administrators can control feature availability, assign credit requirements, and manage credit packages. Users receive free credits upon registration, and can buy more via Stripe. The system tracks feature usage and ensures features are blocked if insufficient credits are available.
                              
 # :pushpin: Table of Contents
 
@@ -25,20 +21,33 @@ Na backseasy you find a diverse collection of backgrounds ready to be used in yo
 
 #### Clone repository
 ```bash
-git clone https://github.com/Icegreeen/backseasy
+git clone https://github.com/Icegreeen/MachineSync
 ```
-#### Install dependencies & execute web application in development mode
+#### Install dependencies:
 ```bash
-yarn
-yarn dev
+composer install
 ```
-Open this address in your browser [http://localhost:8000](http://localhost:3000/)
+#### Execute web application in development mode
+```bash
+Backend: php artisan serve
+
+Frontend: npm run dev
+```
+Open this address in your browser [http://localhost:8000](http://localhost:8000/)
+
+#### Listen to webhook via Stripe cli:
+```bash
+stripe listen --forward-to localhost:8000/buy-credits/webhook
+```
+Payment success on webhook:
+
+![759shots_so](https://github.com/Icegreeen/blog-graphQL/assets/56550632/452fa605-1828-4fab-b7f6-1c53e320e879)
 
 # :postbox: Faq
 
 **Question:** What are the technologies used in this project?
 
-**Answer:** [Next.js-14](https://nextjs.org/) and [Tailwind](https://tailwindcss.com/)
+**Answer:** [Laravel](https://laravel.com/), [Tailwind](https://tailwindcss.com/), [PHP](https://www.php.net/), [Sqlite](https://sqlite.org/) and [React](https://reactjs.org/).
 
 # :bug: Issues
 
